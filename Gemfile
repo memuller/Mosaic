@@ -15,13 +15,13 @@ gem 'oauth'
 
 gem 'thin'
 
-group :test do
+group :test, :development do
 	gem 'rspec'
 	gem 'rspec-rails'
 
 	gem 'autotest'
 	
-	gem 'machinist', '>= 2.0.0.beta2'
+	gem 'machinist', '>= 2.0.0.beta1'
 	gem 'machinist_mongo', :git => 'https://github.com/nmerouze/machinist_mongo.git', 
 		:branch => 'machinist2', :require => 'machinist/mongoid'
 	
@@ -29,7 +29,8 @@ group :test do
 end
 
 group :development, :test do
-	gem 'ruby-debug19', :require => 'ruby-debug'
+	gem 'ruby-debug19', :require => 'ruby-debug', :platforms => 'ruby_19'
+	gem 'ruby-debug', :platforms => 'ruby_18'
 end 
 
 # Gems used only for assets and not required
