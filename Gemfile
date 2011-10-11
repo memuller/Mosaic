@@ -13,6 +13,8 @@ gem 'bson_ext'
 
 gem 'oauth'
 
+gem 'rmagick'
+
 gem 'thin'
 
 group :test, :development do
