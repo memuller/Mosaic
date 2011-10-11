@@ -1,0 +1,36 @@
+%p#notice= notice
+
+%p
+  %b Url:
+  = @photo.url
+%p
+  %b Title:
+  = @photo.title
+%p
+  %b Thumbnail:
+  = @photo.thumbnail
+%p
+  %b Referer:
+  = @photo.referer
+%p
+  %b Width:
+  = @photo.width
+%p
+  %b Height:
+  = @photo.height
+%p
+  %b Format:
+  = @photo.format
+%p
+  %b Mean color:
+  = @photo.mean_color
+%p
+  %b Path:
+  = @photo.path
+%p
+  %b Md5:
+  = @photo.md5
+
+= link_to 'Edit', edit_photo_path(@photo)
+\|
+= link_to 'Back', photos_path

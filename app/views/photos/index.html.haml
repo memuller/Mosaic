@@ -1,0 +1,37 @@
+%h1 Listing photos
+
+%table
+  %tr
+    %th Url
+    %th Title
+    %th Thumbnail
+    %th Referer
+    %th Width
+    %th Height
+    %th Format
+    %th Mean color
+    %th Path
+    %th Md5
+    %th
+    %th
+    %th
+
+  - @photos.each do |photo|
+    %tr
+      %td= photo.url
+      %td= photo.title
+      %td= photo.thumbnail
+      %td= photo.referer
+      %td= photo.width
+      %td= photo.height
+      %td= photo.format
+      %td= photo.mean_color
+      %td= photo.path
+      %td= photo.md5
+      %td= link_to 'Show', photo
+      %td= link_to 'Edit', edit_photo_path(photo)
+      %td= link_to 'Destroy', photo, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Photo', new_photo_path
