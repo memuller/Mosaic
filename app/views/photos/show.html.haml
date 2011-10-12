@@ -1,8 +1,8 @@
 %p#notice= notice
 
 %p
-  %b Url:
-  = @photo.url
+  %b Image:
+  = image_tag(@photo.image_url) if @photo.image?
 %p
   %b Title:
   = @photo.title
