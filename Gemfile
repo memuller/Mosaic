@@ -15,6 +15,8 @@ gem 'oauth'
 
 gem 'rmagick'
 
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+
 gem 'thin'
 
 group :test, :development do
