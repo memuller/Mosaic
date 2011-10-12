@@ -2,15 +2,12 @@
 
 %table
   %tr
-    %th Url
-    %th Title
     %th Thumbnail
-    %th Referer
+    %th Title
     %th Width
     %th Height
     %th Format
     %th Mean color
-    %th Path
     %th Md5
     %th
     %th
@@ -18,15 +15,12 @@
 
   - @photos.each do |photo|
     %tr
-      %td= photo.url
+      %td= image_tag(photo.image.thumbnail.url)
       %td= photo.title
-      %td= photo.thumbnail
-      %td= photo.referer
       %td= photo.width
       %td= photo.height
       %td= photo.format
-      %td= photo.mean_color
-      %td= photo.path
+      %td{:style => "background-color: #{hex_rgb(photo.mean_color)}" }= photo.mean_color
       %td= photo.md5
       %td= link_to 'Show', photo
       %td= link_to 'Edit', edit_photo_path(photo)

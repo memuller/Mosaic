@@ -1,14 +1,10 @@
 %p#notice= notice
 
 %p
-  %b Image:
   = image_tag(@photo.image_url) if @photo.image?
 %p
   %b Title:
   = @photo.title
-%p
-  %b Thumbnail:
-  = @photo.thumbnail
 %p
   %b Referer:
   = @photo.referer
@@ -24,9 +20,6 @@
 %p
   %b Mean color:
   = @photo.mean_color
-%p
-  %b Path:
-  = @photo.path
 %p
   %b Md5:
   = @photo.md5
