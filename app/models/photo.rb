@@ -3,7 +3,9 @@ class Photo
 
   field :image_file, type: String
   field :title, type: String
+
   field :referer, type: String
+  field :appears_in, type: Array, default: []
   
   field :width, type: Integer
   field :height, type: Integer
