@@ -16,6 +16,9 @@ class Photo
 
   mount_uploader :image, PhotoUploader
 
+  index :md5, unique: true
+  index :appears_in
+
   validates_presence_of :title, :image
   validates_uniqueness_of :md5
 
@@ -49,7 +52,4 @@ class Photo
     require 'digest/md5'
     self.md5 = Digest::MD5.hexdigest(self.image.file.read)
   end
-
-
-
 end
