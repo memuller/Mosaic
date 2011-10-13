@@ -17,9 +17,10 @@ gem 'rmagick'
 
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 
+gem 'rack', '1.3.3'
 gem 'thin'
 
-group :test, :development do
+group :test  do
 	gem 'rspec'
 	gem 'rspec-rails'
 
@@ -33,8 +34,7 @@ group :test, :development do
 end
 
 group :development, :test do
-	gem 'ruby-debug19', :require => 'ruby-debug', :platforms => 'ruby_19'
-	gem 'ruby-debug', :platforms => 'ruby_18'
+	gem 'ruby-debug19', :require => 'ruby-debug'
 end 
 
 # Gems used only for assets and not required
