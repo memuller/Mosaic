@@ -26,14 +26,14 @@ class Photo
   before_validation :calculate_md5
 
   def save_image_properties
-    img = Magick::Image.read(self.image.path).first
+    img = Magick::Image.read(self.image.small.path).first
     self.width = img.columns
     self.height = img.rows
     self.format = self.image.file.extension
   end 
 
   def calculate_mean_color
-    img = Magick::Image.read(self.image.path).first
+    img = Magick::Image.read(self.image.small.path).first
     red = green = blue = 0
     img.each_pixel do |p, x, y|
       red += p.red
