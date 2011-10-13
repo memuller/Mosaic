@@ -49,7 +49,9 @@ class Photo
   end
 
   def calculate_md5
-    require 'digest/md5'
-    self.md5 = Digest::MD5.hexdigest(self.image.file.read)
+    if self.image.file
+      require 'digest/md5'
+      self.md5 = Digest::MD5.hexdigest(self.image.file.read)
+    end
   end
 end
