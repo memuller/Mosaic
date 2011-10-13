@@ -22,7 +22,7 @@ class Boss
 
 	def search(query, *args)
 		query = URI.encode(query)
-		step_size = 35 > @num_results ? 35 : @num_results
+		step_size = 35
 		(0..@num_results).step(step_size) do |i|
 			url = "/ysearch/#{service}?q=#{query}&format=#{@format}"
 			url += "&count=#{step_size}&start=#{i}"
@@ -30,9 +30,9 @@ class Boss
 			body = JSON.parse(request.body).first.last
 			@response_code = body['responsecode']
 			@total_results = body[@service]['totalresults']
-			@result = body[@service]['results']
+			@results = @results.push(*body[@service]['results'])
 		end
-		@result
+		@results
 	end
 
 end
