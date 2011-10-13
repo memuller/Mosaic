@@ -4,3 +4,4 @@ log/*.log
 tmp/
 .sass-cache/
 config/mongoid.yml
+config/boss.yml
