@@ -1,5 +1,5 @@
 def color_difference(rgb1, rgb2)
-	red, green, blue = rgb1[:red] - rgb2['red'], rgb1[:green] - rgb2['green'], rgb1[:blue] - rgb2['blue']
+	red, green, blue = rgb1['red'] - rgb2['red'], rgb1['green'] - rgb2['green'], rgb1['blue'] - rgb2['blue']
 	Math.sqrt( (red * red) + (green * green) + (blue * blue) )
 end
 
@@ -19,7 +19,7 @@ task :mosaic, [:image_md5, :tile_width, :tile_height] => :environment do |task, 
 	source.resize_to_fit! source_width, (source.rows/source.columns) * source_width
 	source_pixels = []
 	source.each_pixel do |pixel, x, y|
-		source_pixels << { red: pixel.red, green: pixel.green, blue: pixel.blue }
+		source_pixels << { 'red' => pixel.red, 'green' => pixel.green, 'blue' => pixel.blue }
 	end
 
 	mosaic_images = Magick::ImageList.new
